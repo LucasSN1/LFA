@@ -21,28 +21,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void btnSaldoOnClick(View v){
+    public void btnSaldoOnClick(View v) {
         EditText editTextMoeda = findViewById(R.id.editTextDinheiro);
         TextView textViewSaldo = findViewById(R.id.textViewSaldo);
         TextView textViewRetire = findViewById(R.id.textViewRetire);
 
-        if (Double.parseDouble(editTextMoeda.getText().toString()) == 0.25 || Double.parseDouble(editTextMoeda.getText().toString()) == 0.10){
+        if (Double.parseDouble(editTextMoeda.getText().toString()) == 0.25 || Double.parseDouble(editTextMoeda.getText().toString()) == 0.10) {
             saldo += Double.parseDouble(editTextMoeda.getText().toString());
             textViewSaldo.setText("Saldo: $" + saldo);
 
-            if (saldo >= 0.45){
+            if (saldo >= 0.45) {
                 textViewRetire.setText("Retire sua Coca-Cola!");
                 textViewRetire.setVisibility(View.VISIBLE);
-            }
-            else{
+            } else {
                 textViewRetire.setText("Saldo insuficiente!");
                 textViewRetire.setVisibility(View.VISIBLE);
             }
-        }
-        else {
+        } else {
             Toast.makeText(this, "Valor não aceito!", Toast.LENGTH_SHORT).show();
         }
-
 
 
     }
